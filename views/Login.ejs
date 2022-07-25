@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/bootstrap.css" />
+    <title>Login Page</title>
+  </head>
+  <body class="bg-primary p-5">
+    <h4 class="text-center text-white mb-3 text-shadow">LOGIN PAGE</h4>
+    <% if (locals.error) { %>
+    <div class="alert alert-danger w-50 mx-auto"><%= locals.error %></div>
+    <% } %> <% if (locals.success) { %>
+    <div class="alert alert-success w-50 mx-auto"><%= locals.success %></div>
+    <% } %>
+    <form action="/login" method="post" autocomplete="off">
+      <div class="card border-0 shadow w-50 mx-auto">
+        <div class="card-body">
+          <div class="form-group my-3">
+            <label for="email" class="form-group-text">Email</label>
+            <input
+              type="email"
+              name="email"
+              value="<%= locals.email %>"
+              id="email"
+              placeholder="Enter your email"
+              class="form-control shadow-none text-muted"
+            />
+          </div>
+          <div class="form-group my-3">
+            <label for="password" class="form-group-text">Password</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Enter your password"
+              class="form-control shadow-none text-muted"
+            />
+          </div>
+          <button
+            type="submit"
+            class="btn btn-primary w-100 shadow-none border-0"
+          >
+            Login
+          </button>
+          <p class="text-center text-muted mt-3">
+            Don't have an account? <a href="/">Register</a>
+          </p>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
