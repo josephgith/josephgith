@@ -68,4 +68,4 @@ app.get("/dashboard/:id", async (req, res) => {
   res.render("Dashboard.ejs", { user });
 });
 
-app.listen(8888, () => console.log("server runing"));
+app.listen(process.env.PORT || 8888, () => console.log("server runing"));
